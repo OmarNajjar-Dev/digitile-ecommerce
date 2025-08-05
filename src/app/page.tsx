@@ -1,5 +1,15 @@
 import Image from "next/image";
 
+/**
+ * Home page component that serves as the main landing page of the application.
+ *
+ * This component renders the primary homepage content including the Next.js logo,
+ * getting started instructions, and various call-to-action links for deployment
+ * and documentation. It provides a responsive layout with proper styling
+ * and accessibility features.
+ *
+ * @returns JSX.Element - The complete homepage with navigation links and branding elements
+ */
 export default function Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
