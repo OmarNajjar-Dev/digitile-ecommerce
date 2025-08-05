@@ -1,5 +1,5 @@
-import HeaderDesktop from "./desktop/";
-import HeaderMobile from "./mobile/";
+import { DesktopHeader } from "./desktop";
+import { MobileHeader } from "./mobile";
 
 /**
  * Main Header component that renders both desktop and mobile header versions.
@@ -13,8 +13,8 @@ import HeaderMobile from "./mobile/";
 function index() {
   return (
     <header>
-      <HeaderDesktop></HeaderDesktop>
-      <HeaderMobile></HeaderMobile>
+      <DesktopHeader></DesktopHeader>
+      <MobileHeader></MobileHeader>
     </header>
   );
 }
