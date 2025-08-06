@@ -2,6 +2,15 @@ import Link from "next/link";
 import { HeaderIconProps } from "./HeaderIcon.types";
 
 /**
+ * Base CSS classes for the HeaderIcon component.
+ *
+ * Defines the default styling for social media icon links:
+ * - Horizontal margin of 8px on both sides (mx-2)
+ * - Ensures proper spacing between multiple icons in the header
+ */
+const BASE_STYLES = "mx-2";
+
+/**
  * HeaderIcon component that renders a clickable social media icon link.
  *
  * This component creates a link wrapper around a social media icon that opens
@@ -12,7 +21,18 @@ import { HeaderIconProps } from "./HeaderIcon.types";
  * @param {string} props.href - The URL to navigate to when the icon is clicked
  * @param {React.ReactNode} props.icon - The icon element to display (typically from react-icons)
  *
- * @returns JSX.Element - A Link component containing the social media icon with proper styling
+ * @returns {JSX.Element} A Link component containing the social media icon with proper styling
+ *
+ * @example
+ * ```tsx
+ * // Basic usage
+ * <HeaderIcon href="https://twitter.com/user" icon={<FaTwitter />} />
+ *
+ * // With custom icon
+ * <HeaderIcon href="https://github.com/user" icon={<FaGithub />} />
+ * ```
+ *
+ * @since 1.0.0
  */
 function HeaderIcon({ href, icon }: HeaderIconProps) {
   return (
@@ -20,7 +40,7 @@ function HeaderIcon({ href, icon }: HeaderIconProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="mx-2"
+      className={BASE_STYLES}
     >
       {icon}
     </Link>

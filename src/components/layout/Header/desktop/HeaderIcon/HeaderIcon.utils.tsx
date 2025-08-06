@@ -9,28 +9,42 @@ import {
 } from "react-icons/fa";
 
 /**
- * Default Tailwind utility classes applied to every icon.
+ * Base CSS classes for the HeaderIcon component.
  *
- * - `w-7 h-7` → sets width & height to 1.75 rem (28 px).  
- * - `text-white` → forces icon color to white so it won’t inherit parent color.
+ * Defines the default styling for social media icons:
+ * - Width and height of 28px (w-7 h-7)
+ * - White text color (text-white)
+ * - Ensures consistent sizing and color across all icons
  */
 const defaultClasses = "w-7 h-7 text-white";
 
 /**
  * Returns the social-media icon matching the provided platform name.
  *
- * @param platform - Social-media platform name (case-insensitive).  
+ * This utility function maps platform names to their corresponding React-Icons
+ * components with consistent styling applied. It supports case-insensitive
+ * platform names and returns null for unsupported platforms.
+ *
+ * @param {string} platform - Social-media platform name (case-insensitive).
  *   Supported values: `"twitter"`, `"facebook"`, `"github"`, `"linkedin"`,
  *   `"youtube"`, `"instagram"`, `"whatsapp"`.
  *
- * @returns The corresponding React-Icons element with preset sizing & color,
+ * @returns {React.ReactNode} The corresponding React-Icons element with preset sizing & color,
  *          or `null` if the platform is not supported.
  *
  * @example
  * ```tsx
  * const icon = getIcon("twitter");
  * // => <FaTwitter className="w-7 h-7 text-white" />
+ *
+ * const icon = getIcon("GITHUB");
+ * // => <FaGithub className="w-7 h-7 text-white" />
+ *
+ * const icon = getIcon("myspace");
+ * // => null
  * ```
+ *
+ * @since 1.0.0
  */
 export function getIcon(platform: string): React.ReactNode {
   switch (platform.toLowerCase()) {
