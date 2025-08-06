@@ -4,6 +4,9 @@ import SearchForm from "./SearchForm.client";
 import IconBar from "./IconBar";
 import { twMerge } from "tailwind-merge";
 
+/**
+ * Default logo configuration for the header
+ */
 const LOGO_PROPS = {
   src: "/images/logo.webp",
   alt: "MySite Logo",
@@ -12,9 +15,28 @@ const LOGO_PROPS = {
   priority: true,
 };
 
+/**
+ * Base CSS classes for the HeaderMiddle component.
+ *
+ * Defines the default styling for the header middle section:
+ * - Hidden on mobile devices (hidden)
+ * - Flexbox layout on medium screens and up (md:flex)
+ * - Center-aligned content horizontally and vertically (md:justify-center md:items-center)
+ * - Fixed height of 96px (h-24)
+ * - Horizontal padding of 40px (px-10)
+ * - Full width (w-full)
+ * - White background color (bg-white)
+ */
 const BASE_STYLES =
   "hidden md:flex md:justify-center md:items-center h-24 px-10 w-full bg-white";
 
+/**
+ * HeaderMiddle component that renders the middle section of the desktop header
+ *
+ * @param {HeaderMiddleProps} props - Component props
+ * @param {string} [props.className] - Additional CSS classes to apply to the root element
+ * @returns {JSX.Element} The rendered header middle section
+ */
 export default function HeaderMiddle({ className }: HeaderMiddleProps) {
   const rootClass = twMerge(BASE_STYLES, className);
 

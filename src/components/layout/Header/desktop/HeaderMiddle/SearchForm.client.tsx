@@ -1,3 +1,30 @@
+/**
+ * SearchForm Component
+ *
+ * A client-side search form component that allows users to search for products.
+ * The form includes input validation (minimum 2 characters) and updates the URL
+ * with search parameters for navigation and state management.
+ *
+ * Features:
+ * - Real-time input validation
+ * - URL-based search state management
+ * - Responsive design with search icon
+ * - Disabled state for invalid queries
+ *
+ * @component
+ * @example
+ * ```tsx
+ * import { SearchForm } from "@/components/layout/Header/desktop/HeaderMiddle";
+ *
+ * function Header() {
+ *   return (
+ *     <div className="header">
+ *       <SearchForm />
+ *     </div>
+ *   );
+ * }
+ * ```
+ */
 "use client";
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -5,12 +32,22 @@ import { useState, FormEvent } from "react";
 import { Button, Input } from "@/components/ui";
 import { Search } from "lucide-react";
 
+/**
+ * SearchForm component that handles product search functionality
+ *
+ * @returns {JSX.Element} A search form with input field and submit button
+ */
 export default function SearchForm() {
   const [query, setQuery] = useState("");
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
 
+  /**
+   * Handles form submission and navigates to search results
+   *
+   * @param {FormEvent<HTMLFormElement>} e - The form submission event
+   */
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const trimmed = query.trim();

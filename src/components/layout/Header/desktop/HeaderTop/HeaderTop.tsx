@@ -6,6 +6,18 @@ import { JSX } from "react";
 import { twMerge } from "tailwind-merge";
 import clsx from "clsx";
 
+/**
+ * Base CSS classes for the HeaderTop component.
+ *
+ * Defines the default styling for the header top section:
+ * - Hidden on mobile devices (hidden)
+ * - Flexbox layout on medium screens and up (md:flex)
+ * - Right-aligned content (md:justify-end)
+ * - Fixed height of 48px (h-12)
+ * - Horizontal padding of 40px (px-10)
+ * - Full width (w-full)
+ * - Primary background color (bg-primary)
+ */
 const BASE_STYLES =
   "hidden md:flex md:justify-end h-12 px-10 w-full bg-primary";
 
@@ -19,7 +31,18 @@ const BASE_STYLES =
  * @param {HeaderTopProps} props - Component props
  * @param {string} [props.className] - Optional CSS classes to apply to the container
  *
- * @returns JSX.Element - A div containing social media icon links with proper spacing
+ * @returns {JSX.Element} A div containing social media icon links with proper spacing
+ *
+ * @example
+ * ```tsx
+ * // Basic usage
+ * <HeaderTop />
+ *
+ * // With custom styling
+ * <HeaderTop className="bg-blue-500 text-white" />
+ * ```
+ *
+ * @since 1.0.0
  */
 function HeaderTop({ className }: HeaderTopProps): JSX.Element {
   const rootClass = twMerge(clsx(BASE_STYLES, className));
