@@ -3,6 +3,11 @@ import HeaderIcon from "@/components/layout/Header/desktop/HeaderIcon";
 import { config } from "@/data/config";
 import { getIcon } from "@/components/layout/Header/desktop/HeaderIcon/HeaderIcon.utils";
 import { JSX } from "react";
+import { twMerge } from "tailwind-merge";
+import clsx from "clsx";
+
+const BASE_STYLES =
+  "hidden md:flex md:justify-end h-12 px-10 w-full bg-primary";
 
 /**
  * HeaderTop component that displays social media links in the header.
@@ -17,12 +22,14 @@ import { JSX } from "react";
  * @returns JSX.Element - A div containing social media icon links with proper spacing
  */
 function HeaderTop({ className }: HeaderTopProps): JSX.Element {
+  const rootClass = twMerge(clsx(BASE_STYLES, className));
+
   const socialLinks = Object.entries(config.response.social_media_link).filter(
     ([, url]) => url.trim() !== ""
   );
 
   return (
-    <div className={className}>
+    <div className={rootClass}>
       <div className="flex items-center gap-6">
         {socialLinks.map(([platform, url]) => (
           <HeaderIcon key={platform} href={url} icon={getIcon(platform)} />

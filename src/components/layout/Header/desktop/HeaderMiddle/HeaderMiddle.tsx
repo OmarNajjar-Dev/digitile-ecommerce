@@ -1,7 +1,8 @@
-// components/layout/Header/HeaderMiddle/desktop/HeaderMiddle.tsx
 import { Logo } from "@/components/layout/common";
+import { HeaderMiddleProps } from "./HeaderMiddle.types";
 import SearchForm from "./SearchForm.client";
 import IconBar from "./IconBar";
+import { twMerge } from "tailwind-merge";
 
 const LOGO_PROPS = {
   src: "/images/logo.webp",
@@ -11,9 +12,14 @@ const LOGO_PROPS = {
   priority: true,
 };
 
-export default function HeaderMiddle() {
+const BASE_STYLES =
+  "hidden md:flex md:justify-center md:items-center h-24 px-10 w-full bg-white";
+
+export default function HeaderMiddle({ className }: HeaderMiddleProps) {
+  const rootClass = twMerge(BASE_STYLES, className);
+
   return (
-    <div className="hidden md:flex w-full h-24 items-center px-10 bg-white">
+    <div className={rootClass}>
       {/* Logo with required props */}
       <div className="w-1/6 h-full flex justify-center items-center">
         <Logo
@@ -30,7 +36,6 @@ export default function HeaderMiddle() {
       <div className="flex w-2/6 items-center justify-end gap-6 lg:w-1/6">
         <IconBar />
       </div>
-
     </div>
   );
 }
