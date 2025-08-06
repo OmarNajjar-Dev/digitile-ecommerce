@@ -14,8 +14,8 @@ import HeaderBottom from "./HeaderBottom/HeaderBottom";
 function DesktopHeader() {
   return (
     <div>
-      <HeaderTop className="hidden sm:flex sm:justify-end h-12 px-10 w-full bg-primary"></HeaderTop>
-      <HeaderMiddle></HeaderMiddle>
+      <HeaderTop className="hidden md:flex md:justify-end h-12 px-10 w-full bg-primary"></HeaderTop>
+      <HeaderMiddle className="hidden md:flex md:justify-center md:items-center h-24 px-10 w-full bg-white"></HeaderMiddle>
       <HeaderBottom></HeaderBottom>
     </div>
   );

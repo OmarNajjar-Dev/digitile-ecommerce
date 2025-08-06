@@ -9,7 +9,7 @@
  * @returns JSX.Element - A div containing the mobile header content
  */
 function MobileHeader() {
-  return <div>MobileHeader</div>;
+  return <div></div>;
 }
 
 export default MobileHeader;

@@ -1,13 +1,24 @@
-/**
- * @file Unit tests for HeaderMiddle component
- */
 import { render, screen } from "@testing-library/react";
-import { HeaderMiddle } from "..";
+import HeaderMiddle from "../HeaderMiddle";
+
+jest.mock("../IconBar", () => ({
+  __esModule: true,
+  default: () => <div data-testid="iconbar" />,
+}));
+jest.mock("../SearchForm.client", () => ({
+  __esModule: true,
+  default: () => <form data-testid="searchform" />,
+}));
 
 describe("<HeaderMiddle />", () => {
-  it("renders main navigation", () => {
+  it("renders Logo, IconBar and SearchForm (no nav)", () => {
     render(<HeaderMiddle />);
-    // looking for the div content since HeaderMiddle currently renders a div
-    expect(screen.getByText("HeaderMiddle")).toBeInTheDocument();
+
+    expect(
+      screen.getByRole("link", { name: /go to homepage/i })
+    ).toBeInTheDocument();
+
+    expect(screen.getByTestId("iconbar")).toBeInTheDocument();
+    expect(screen.getByTestId("searchform")).toBeInTheDocument();
   });
 });

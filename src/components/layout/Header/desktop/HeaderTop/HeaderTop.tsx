@@ -2,6 +2,7 @@ import { HeaderTopProps } from "./HeaderTop.types";
 import HeaderIcon from "@/components/layout/Header/desktop/HeaderIcon";
 import { config } from "@/data/config";
 import { getIcon } from "@/components/layout/Header/desktop/HeaderIcon/HeaderIcon.utils";
+import { JSX } from "react";
 
 /**
  * HeaderTop component that displays social media links in the header.
@@ -15,7 +16,7 @@ import { getIcon } from "@/components/layout/Header/desktop/HeaderIcon/HeaderIco
  *
  * @returns JSX.Element - A div containing social media icon links with proper spacing
  */
-function HeaderTop({ className }: HeaderTopProps) {
+function HeaderTop({ className }: HeaderTopProps): JSX.Element {
   const socialLinks = Object.entries(config.response.social_media_link).filter(
     ([, url]) => url.trim() !== ""
   );

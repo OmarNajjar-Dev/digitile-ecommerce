@@ -1,14 +1,36 @@
-/**
- * HeaderMiddle component for the middle section of the desktop header.
- *
- * This component represents the middle section of the header layout, typically
- * containing the main navigation menu, logo, or other primary header elements.
- * Currently serves as a placeholder for future header middle content.
- *
- * @returns JSX.Element - A div containing the header middle section content
- */
-function HeaderMiddle() {
-  return <div>HeaderMiddle</div>;
-}
+// components/layout/Header/HeaderMiddle/desktop/HeaderMiddle.tsx
+import { Logo } from "@/components/layout/common";
+import SearchForm from "./SearchForm.client";
+import IconBar from "./IconBar";
 
-export default HeaderMiddle;
+const LOGO_PROPS = {
+  src: "/images/logo.webp",
+  alt: "MySite Logo",
+  width: 320,
+  height: 100,
+  priority: true,
+};
+
+export default function HeaderMiddle() {
+  return (
+    <div className="hidden md:flex w-full h-24 items-center px-10 bg-white">
+      {/* Logo with required props */}
+      <div className="w-1/6 h-full flex justify-center items-center">
+        <Logo
+          className="absolute h-full w-full left-0 top-0 right-0 bottom-0 text-transparent"
+          {...LOGO_PROPS}
+        />
+      </div>
+
+      {/* Search */}
+      <div className="lg:w-4/6 w-5/6">
+        <SearchForm />
+      </div>
+
+      <div className="flex w-2/6 items-center justify-end gap-6 lg:w-1/6">
+        <IconBar />
+      </div>
+
+    </div>
+  );
+}

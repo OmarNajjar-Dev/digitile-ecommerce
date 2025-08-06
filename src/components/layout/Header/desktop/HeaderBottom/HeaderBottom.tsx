@@ -8,7 +8,7 @@
  * @returns JSX.Element - A div containing the header bottom section content
  */
 function HeaderBottom() {
-  return <div>HeaderBottom</div>;
+  return <div></div>;
 }
 
 export default HeaderBottom;
