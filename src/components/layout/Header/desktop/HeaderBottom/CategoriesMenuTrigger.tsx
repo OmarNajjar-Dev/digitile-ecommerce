@@ -36,7 +36,7 @@ export default function CategoriesMenuTrigger({ items }: Props) {
   return (
     <div
       ref={ref}
-      className="w-full z-50 mx-auto h-14 mt-auto bg-secondary flex items-center rounded-t-md relative"
+      className="w-full z-50 mx-auto h-12 mt-auto bg-secondary flex items-center rounded-t-sm relative"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >

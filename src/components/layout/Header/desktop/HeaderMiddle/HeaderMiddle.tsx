@@ -27,7 +27,7 @@ const LOGO_PROPS = {
  * - White background color (bg-white)
  */
 const BASE_STYLES =
-  "flex justify-center items-center h-24 px-10 w-full bg-white";
+  "flex justify-center items-center h-28 px-10 w-full bg-white";
 
 /**
  * HeaderMiddle component that renders the middle section of the desktop header

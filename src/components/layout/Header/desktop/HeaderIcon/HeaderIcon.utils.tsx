@@ -16,7 +16,7 @@ import {
  * - White text color (text-white)
  * - Ensures consistent sizing and color across all icons
  */
-const defaultClasses = "w-7 h-7 text-white";
+const defaultClasses = "w-5 h-5 text-white";
 
 /**
  * Returns the social-media icon matching the provided platform name.

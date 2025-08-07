@@ -81,8 +81,7 @@ export default function SearchForm() {
       <Button
         type="submit"
         disabled={isDisabled}
-        className="
-          absolute right-0 rounded-sm rounded-l-none cursor-pointer bg-primary px-3 py-6 text-lg font-bold text-white"
+        className="absolute right-0 rounded-sm rounded-l-none bg-primary px-3 py-6 text-lg font-bold text-white disabled:cursor-not-allowed disabled:hover:bg-primary"
       >
         search
       </Button>

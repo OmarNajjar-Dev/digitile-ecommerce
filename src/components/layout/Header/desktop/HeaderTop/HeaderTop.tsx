@@ -18,7 +18,7 @@ import clsx from "clsx";
  * - Primary background color (bg-primary)
  */
 const BASE_STYLES =
-  "flex justify-end h-12 px-10 w-full bg-primary";
+  "flex justify-end h-10 px-10 w-full bg-primary";
 
 /**
  * HeaderTop component that displays social media links in the header.

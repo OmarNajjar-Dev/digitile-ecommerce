@@ -8,7 +8,7 @@ import { HeaderIconProps } from "./HeaderIcon.types";
  * - Horizontal margin of 8px on both sides (mx-2)
  * - Ensures proper spacing between multiple icons in the header
  */
-const BASE_STYLES = "mx-2";
+const BASE_STYLES = "mx-1";
 
 /**
  * HeaderIcon component that renders a clickable social media icon link.

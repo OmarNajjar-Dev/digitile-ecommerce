@@ -14,7 +14,7 @@ export default function MainLinks({ links }: { links: PrimaryLink[] }) {
   if (links.length === 0) return null;
 
   return (
-    <ul className="flex w-5/12 lg:w-7/12 items-center justify-start gap-10 font-bold">
+    <ul className="flex w-5/12 lg:w-7/12 items-center justify-start gap-10 font-bold pt-3 ps-6">
       {links.map(({ label, href }) => (
         <li key={href}>
           <Link
