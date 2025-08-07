@@ -60,7 +60,7 @@ const BASE_STYLES =
 export default function HeaderBottom({
   className,
   categories = defaultCategories,
-  mainLinks = [{ label: "Brands", href: "/en/brands" }] as PrimaryLink[],
+  mainLinks = [{ label: "Brands", href: "/brands" }] as PrimaryLink[],
   currentLang = "en",
   languages = [] as LanguageOption[],
   ...navProps
