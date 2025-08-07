@@ -1,3 +1,10 @@
+// CategoriesMenu.tsx
+
+/**
+ * Wrapper component that centers {@link CategoriesMenuTrigger} inside the header.
+ *
+ * @param props.items - List of categories; returns `null` when empty.
+ */
 import type { CategoryItem } from "./HeaderBottom.types";
 import CategoriesMenuTrigger from "./CategoriesMenuTrigger";
 

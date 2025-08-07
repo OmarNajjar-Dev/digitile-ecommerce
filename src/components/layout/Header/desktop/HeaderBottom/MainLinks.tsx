@@ -1,3 +1,11 @@
+/**
+ * MainLinks component.
+ *
+ * Renders a center-aligned list of primary navigation links inside the header.
+ *
+ * @param props.links - Array of navigation objects (label · href).
+ * @returns Unordered list of links, or `null` when the array is empty.
+ */
 import Link from "next/link";
 import type { PrimaryLink } from "./HeaderBottom.types";
 

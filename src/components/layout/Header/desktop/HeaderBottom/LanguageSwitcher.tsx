@@ -1,8 +1,15 @@
+/**
+ * Optional language switcher displayed at the right side of the header.
+ *
+ * @param props.options - Array of language choices (code · label · href).
+ * @param props.active  - Currently selected language code.
+ * @returns A set of links, or `null` when no options are provided.
+ */
 import Link from "next/link";
 import clsx from "clsx";
 import type { LanguageOption } from "./HeaderBottom.types";
 
-/** Optional right-hand language switcher. */
+/** Right-hand language switcher. */
 export default function LanguageSwitcher({
   options,
   active,

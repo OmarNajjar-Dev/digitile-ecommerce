@@ -1,3 +1,14 @@
+/**
+ * CategoriesMenuTrigger component.
+ *
+ * Renders a dropdown button that lists product categories.
+ * - Hover shows the menu and flips the arrow icon.
+ * - Clicking the main button navigates to `/categories`.
+ * - Clicking a list item navigates to `/{slug}` or a custom `href`.
+ *
+ * This file is “client-side” because it relies on React state and browser events.
+ */
+
 "use client";
 
 import { useState, useRef, useEffect } from "react";
@@ -6,20 +17,26 @@ import { useRouter } from "next/navigation";
 import { Menu, ChevronDown } from "lucide-react";
 import type { CategoryItem } from "./HeaderBottom.types";
 
+/**
+ * Props for {@link CategoriesMenuTrigger}.
+ * @property items - Array of categories to display in the dropdown.
+ */
 interface Props {
   items: CategoryItem[];
 }
 
+/**
+ * Dropdown trigger that lists categories.
+ */
 export default function CategoriesMenuTrigger({ items }: Props) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
-  /* close on outside click / touch */
+  /* Close menu on any outside pointer event */
   useEffect(() => {
     const handler = (e: PointerEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node))
-        setOpen(false);
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
     };
     document.addEventListener("pointerdown", handler);
     return () => document.removeEventListener("pointerdown", handler);
