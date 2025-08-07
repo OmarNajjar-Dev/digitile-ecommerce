@@ -50,7 +50,7 @@ const defaultCategories: CategoryItem[] = categoriesPayload.response.categories;
  * - Subtle shadow
  */
 const BASE_STYLES =
-  "flex items-center h-16 w-full px-10 bg-twhite shadow-[1px_2px_3px_rgba(148,139,139,0.75)]";
+  "flex items-center h-16 w-full px-10 bg-primary shadow-[1px_2px_3px_rgba(148,139,139,0.75)]";
 
 /* -------------------------------------------------------------------------- */
 /* Component                                                                  */

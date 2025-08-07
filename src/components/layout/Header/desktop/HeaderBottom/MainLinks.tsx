@@ -19,7 +19,7 @@ export default function MainLinks({ links }: { links: PrimaryLink[] }) {
         <li key={href}>
           <Link
             href={href}
-            className="capitalize font-extrabold transition-colors hover:text-primary"
+            className="capitalize font-extrabold transition-colors text-white hover:text-gray-100"
           >
             {label}
           </Link>

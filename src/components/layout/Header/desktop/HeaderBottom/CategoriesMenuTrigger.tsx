@@ -36,7 +36,7 @@ export default function CategoriesMenuTrigger({ items }: Props) {
   return (
     <div
       ref={ref}
-      className="w-full z-50 mx-auto h-full bg-primary flex items-center rounded-t-md relative"
+      className="w-full z-50 mx-auto h-14 mt-auto bg-secondary flex items-center rounded-t-md relative"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
@@ -70,7 +70,7 @@ export default function CategoriesMenuTrigger({ items }: Props) {
       >
         <ul>
           <li
-            className="w-full px-4 py-2 cursor-pointer hover:bg-primary hover:text-white"
+            className="w-full px-4 py-2 cursor-pointer hover:bg-secondary hover:text-white"
           >
             <Link href="./categories" className="flex w-full font-bold">
               All Categories
@@ -81,7 +81,7 @@ export default function CategoriesMenuTrigger({ items }: Props) {
             return (
               <li
                 key={cat.id}
-                className="w-full px-4 py-2 cursor-pointer hover:bg-primary hover:text-white"
+                className="w-full px-4 py-2 cursor-pointer hover:bg-secondary hover:text-white"
               >
                 <Link href={href} className="flex w-full font-bold">
                   {cat.name.en}

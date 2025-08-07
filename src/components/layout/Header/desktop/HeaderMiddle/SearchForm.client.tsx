@@ -75,7 +75,7 @@ export default function SearchForm() {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="search (Enter two characters) ..."
-        className="w-full rounded-md bg-gray-200 py-6 pl-10 pr-20 placeholder:text-base placeholder:font-semibold placeholder:text-gray-500"
+        className="w-full rounded-md bg-gray-200/70 py-6 pl-10 pr-20 placeholder:text-base placeholder:font-semibold placeholder:text-gray-500/60"
       />
 
       <Button
