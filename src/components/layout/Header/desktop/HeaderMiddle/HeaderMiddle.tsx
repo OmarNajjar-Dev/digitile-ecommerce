@@ -19,7 +19,6 @@ const LOGO_PROPS = {
  * Base CSS classes for the HeaderMiddle component.
  *
  * Defines the default styling for the header middle section:
- * - Hidden on mobile devices (hidden)
  * - Flexbox layout on medium screens and up (md:flex)
  * - Center-aligned content horizontally and vertically (md:justify-center md:items-center)
  * - Fixed height of 96px (h-24)
@@ -28,7 +27,7 @@ const LOGO_PROPS = {
  * - White background color (bg-white)
  */
 const BASE_STYLES =
-  "hidden md:flex md:justify-center md:items-center h-24 px-10 w-full bg-white";
+  "flex justify-center items-center h-24 px-10 w-full bg-white";
 
 /**
  * HeaderMiddle component that renders the middle section of the desktop header

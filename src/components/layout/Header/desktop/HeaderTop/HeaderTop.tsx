@@ -10,7 +10,6 @@ import clsx from "clsx";
  * Base CSS classes for the HeaderTop component.
  *
  * Defines the default styling for the header top section:
- * - Hidden on mobile devices (hidden)
  * - Flexbox layout on medium screens and up (md:flex)
  * - Right-aligned content (md:justify-end)
  * - Fixed height of 48px (h-12)
@@ -19,7 +18,7 @@ import clsx from "clsx";
  * - Primary background color (bg-primary)
  */
 const BASE_STYLES =
-  "hidden md:flex md:justify-end h-12 px-10 w-full bg-primary";
+  "flex justify-end h-12 px-10 w-full bg-primary";
 
 /**
  * HeaderTop component that displays social media links in the header.

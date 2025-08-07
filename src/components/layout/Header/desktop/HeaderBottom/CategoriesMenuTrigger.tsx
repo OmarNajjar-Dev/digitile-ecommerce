@@ -36,7 +36,8 @@ export default function CategoriesMenuTrigger({ items }: Props) {
   /* Close menu on any outside pointer event */
   useEffect(() => {
     const handler = (e: PointerEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+      if (ref.current && !ref.current.contains(e.target as Node))
+        setOpen(false);
     };
     document.addEventListener("pointerdown", handler);
     return () => document.removeEventListener("pointerdown", handler);
@@ -45,23 +46,23 @@ export default function CategoriesMenuTrigger({ items }: Props) {
   return (
     <div
       ref={ref}
-      className="relative w-full z-50 h-full"
+      className="w-full z-50 mx-auto h-full mt-0 bg-primary flex justify-between items-center gap-4 px-2 text-white lg:text-base text-sm font-bold cursor-pointer relative"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
       <button
         type="button"
         onClick={() => router.push("/categories")} // navigate to all categories
-        className="w-full h-full bg-primary flex justify-between items-center gap-4 px-2 text-white lg:text-base text-sm font-bold cursor-pointer rounded-t-md hover:underline"
+        className="w-full h-full bg-primary flex justify-between items-center gap-4 px-2 text-white cursor-pointer rounded-t-md hover:underline"
       >
         <span className="relative w-full flex justify-center items-center">
           <Menu
             size={28}
             aria-hidden
-            className="absolute left-8 top-1/2 -translate-y-1/2 shrink-0"
+            className="absolute left-0 xl:left-6 2xl:left-8 top-1/2 -translate-y-1/2 shrink-0"
           />
 
-          <span className="ps-16 text-sm font-bold">
+          <span className="ps-16 text-left xl:text-base text-sm font-bold">
             {open ? "All Categories" : "Browse Categories"}
           </span>
         </span>

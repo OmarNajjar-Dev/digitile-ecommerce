@@ -7,7 +7,6 @@
  * 3. Optional language switcher (right)
  *
  * @remarks
- * - Hidden on small screens (`hidden`), visible from `md` breakpoint up.
  * - Combines external data (default categories) with optional props.
  *
  * @param props.className      - Extra Tailwind classes to merge with base styles.
@@ -42,7 +41,6 @@ const defaultCategories: CategoryItem[] = categoriesPayload.response.categories;
 /**
  * Base CSS classes for the HeaderBottom component.
  *
- * - Hidden on mobile (`hidden`)
  * - Flexbox layout on medium screens+ (`md:flex`)
  * - Vertically centred items (`items-center`)
  * - Fixed height 64 px (`h-16`)
@@ -52,7 +50,7 @@ const defaultCategories: CategoryItem[] = categoriesPayload.response.categories;
  * - Subtle shadow
  */
 const BASE_STYLES =
-  "hidden md:flex items-center h-16 w-full px-10 bg-twhite shadow-[1px_2px_3px_rgba(148,139,139,0.75)]";
+  "flex items-center h-16 w-full px-10 bg-twhite shadow-[1px_2px_3px_rgba(148,139,139,0.75)]";
 
 /* -------------------------------------------------------------------------- */
 /* Component                                                                  */

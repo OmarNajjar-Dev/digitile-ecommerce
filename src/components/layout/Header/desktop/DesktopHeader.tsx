@@ -13,7 +13,7 @@ import HeaderBottom from "./HeaderBottom/HeaderBottom";
  */
 function DesktopHeader() {
   return (
-    <div>
+    <div className="hidden md:block">
       <HeaderTop></HeaderTop>
       <HeaderMiddle></HeaderMiddle>
       <HeaderBottom></HeaderBottom>
