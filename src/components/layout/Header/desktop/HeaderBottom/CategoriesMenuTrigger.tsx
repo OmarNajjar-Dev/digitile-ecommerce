@@ -12,7 +12,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { AlignJustify, ChevronDown } from "lucide-react";
+import { AlignLeft, ChevronDown } from "lucide-react";
 import type { CategoryItem } from "./HeaderBottom.types";
 
 interface Props {
@@ -45,7 +45,7 @@ export default function CategoriesMenuTrigger({ items }: Props) {
         className="w-full h-full flex items-center gap-3 px-2 lg:px-4 text-white cursor-pointer"
       >
         {/* icon */}
-        <AlignJustify size={26} aria-hidden className="shrink-0" />
+        <AlignLeft size={26} aria-hidden className="shrink-0" />
 
         {/* label */}
         <span className="flex-1 text-left text-sm xl:text-base font-bold">
@@ -70,7 +70,7 @@ export default function CategoriesMenuTrigger({ items }: Props) {
       >
         <ul>
           <li
-            className="w-full px-4 py-2.25 cursor-pointer hover:bg-primary hover:text-white"
+            className="w-full px-4 py-2 cursor-pointer hover:bg-primary hover:text-white"
           >
             <Link href="./categories" className="flex w-full font-bold">
               All Categories
@@ -81,7 +81,7 @@ export default function CategoriesMenuTrigger({ items }: Props) {
             return (
               <li
                 key={cat.id}
-                className="w-full px-4 py-2.25 cursor-pointer hover:bg-primary hover:text-white"
+                className="w-full px-4 py-2 cursor-pointer hover:bg-primary hover:text-white"
               >
                 <Link href={href} className="flex w-full font-bold">
                   {cat.name.en}
