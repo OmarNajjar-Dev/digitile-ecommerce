@@ -46,14 +46,14 @@ export default function CategoriesMenuTrigger({ items }: Props) {
   return (
     <div
       ref={ref}
-      className="w-full z-50 mx-auto h-full mt-0 bg-primary flex justify-between items-center gap-4 px-2 text-white lg:text-base text-sm font-bold cursor-pointer relative"
+      className="w-full z-50 mx-auto h-full mt-0 bg-primary flex justify-between items-center gap-4 px-2 text-white lg:text-base text-sm font-bold rounded-t-md cursor-pointer relative"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
       <button
         type="button"
         onClick={() => router.push("/categories")} // navigate to all categories
-        className="w-full h-full bg-primary flex justify-between items-center gap-4 px-2 text-white cursor-pointer rounded-t-md hover:underline"
+        className="w-full h-full bg-primary flex justify-between items-center gap-4 px-2 text-white cursor-pointer hover:underline"
       >
         <span className="relative w-full flex justify-center items-center">
           <Menu
