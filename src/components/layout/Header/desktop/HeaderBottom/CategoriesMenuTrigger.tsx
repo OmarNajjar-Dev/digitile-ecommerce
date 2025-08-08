@@ -13,7 +13,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { AlignLeft, ChevronDown } from "lucide-react";
-import type { CategoryItem } from "./HeaderBottom.types";
+import type { CategoryItem } from "./header-bottom.types";
 
 interface Props {
   items: CategoryItem[];
@@ -69,9 +69,7 @@ export default function CategoriesMenuTrigger({ items }: Props) {
         }`}
       >
         <ul>
-          <li
-            className="w-full px-4 py-2 cursor-pointer hover:bg-secondary hover:text-white"
-          >
+          <li className="w-full px-4 py-2 cursor-pointer hover:bg-secondary hover:text-white">
             <Link href="./categories" className="flex w-full font-bold">
               All Categories
             </Link>

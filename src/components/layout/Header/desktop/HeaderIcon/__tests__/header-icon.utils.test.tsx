@@ -8,7 +8,7 @@
  * @module HeaderIcon.utils.test
  * @since 1.0.0
  */
-import { getIcon } from "../HeaderIcon.utils";
+import { getIcon } from "../header-icon.utils";
 import { FaTwitter, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 
 /**

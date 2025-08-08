@@ -5,7 +5,7 @@
  *
  * @param props.items - List of categories; returns `null` when empty.
  */
-import type { CategoryItem } from "./HeaderBottom.types";
+import type { CategoryItem } from "./header-bottom.types";
 import CategoriesMenuTrigger from "./CategoriesMenuTrigger";
 
 export default function CategoriesMenu({ items }: { items: CategoryItem[] }) {

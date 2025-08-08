@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import { cn } from "@/lib/utils";
+import Providers from "./providers";
 
 // =======================
 // Global <head> metadata
@@ -79,11 +80,13 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-full flex flex-col antialiased",
-          "bg-background text-foreground",
+          "bg-background text-foreground"
         )}
       >
-        <Header />
-        <main className="flex-1">{children}</main>
+        <Providers>
+          <Header />
+          <main className="flex-1">{children}</main>
+        </Providers>
       </body>
     </html>
   );

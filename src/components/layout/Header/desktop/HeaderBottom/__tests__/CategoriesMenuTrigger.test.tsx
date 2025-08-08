@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import CategoriesMenuTrigger from "../CategoriesMenuTrigger";
-import type { CategoryItem } from "../HeaderBottom.types";
+import type { CategoryItem } from "../header-bottom.types";
 
 /* Mock Next.js router */
 jest.mock("next/navigation", () => ({

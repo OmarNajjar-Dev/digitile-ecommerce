@@ -23,7 +23,7 @@ export { default } from "./HeaderIcon";
  * Exports the HeaderIconProps interface and any other type definitions
  * used by the HeaderIcon component.
  */
-export * from "./HeaderIcon.types";
+export * from "./header-icon.types";
 
 /**
  * Utility functions for HeaderIcon component.
@@ -31,4 +31,4 @@ export * from "./HeaderIcon.types";
  * Exports the getIcon utility function for mapping platform names
  * to their corresponding React-Icons components.
  */
-export * from "./HeaderIcon.utils";
+export * from "./header-icon.utils";

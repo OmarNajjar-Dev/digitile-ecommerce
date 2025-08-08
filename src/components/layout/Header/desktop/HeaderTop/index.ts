@@ -23,4 +23,4 @@ export { default } from "./HeaderTop";
  * Exports the HeaderTopProps interface and any other type definitions
  * used by the HeaderTop component.
  */
-export * from "./HeaderTop.types";
+export * from "./header-top.types";

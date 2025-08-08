@@ -1,5 +1,5 @@
 import { Logo } from "@/components/layout/common";
-import { HeaderMiddleProps } from "./HeaderMiddle.types";
+import { HeaderMiddleProps } from "./header-middle.types";
 import SearchForm from "./SearchForm.client";
 import IconBar from "./IconBar";
 import { twMerge } from "tailwind-merge";

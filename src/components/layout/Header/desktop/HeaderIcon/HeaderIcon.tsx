@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HeaderIconProps } from "./HeaderIcon.types";
+import { HeaderIconProps } from "./header-icon.types";
 
 /**
  * Base CSS classes for the HeaderIcon component.

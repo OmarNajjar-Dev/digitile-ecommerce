@@ -24,7 +24,7 @@ import type {
   HeaderBottomProps,
   PrimaryLink,
   LanguageOption,
-} from "./HeaderBottom.types";
+} from "./header-bottom.types";
 
 /* -------------------------------------------------------------------------- */
 /* External data                                                              */
@@ -58,7 +58,12 @@ const BASE_STYLES =
 export default function HeaderBottom({
   className,
   categories = defaultCategories,
-  mainLinks = [{ label: "Brands", href: "/brands" }, { label: "Blog", href: "/blog" }, { label: "Contact", href: "/contact" }, { label: "About", href: "/about" }] as PrimaryLink[],
+  mainLinks = [
+    { label: "Brands", href: "/brands" },
+    { label: "Blog", href: "/blog" },
+    { label: "Contact", href: "/contact" },
+    { label: "About", href: "/about" },
+  ] as PrimaryLink[],
   currentLang = "en",
   languages = [] as LanguageOption[],
   ...navProps

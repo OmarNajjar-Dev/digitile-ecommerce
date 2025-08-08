@@ -1,7 +1,7 @@
-import { HeaderTopProps } from "./HeaderTop.types";
+import { HeaderTopProps } from "./header-top.types";
 import HeaderIcon from "@/components/layout/Header/desktop/HeaderIcon";
 import { config } from "@/data/config";
-import { getIcon } from "@/components/layout/Header/desktop/HeaderIcon/HeaderIcon.utils";
+import { getIcon } from "@/components/layout/Header/desktop/HeaderIcon/header-icon.utils";
 import { JSX } from "react";
 import { twMerge } from "tailwind-merge";
 import clsx from "clsx";
@@ -17,8 +17,7 @@ import clsx from "clsx";
  * - Full width (w-full)
  * - Primary background color (bg-primary)
  */
-const BASE_STYLES =
-  "flex justify-end h-10 px-10 w-full bg-primary";
+const BASE_STYLES = "flex justify-end h-10 px-10 w-full bg-primary";
 
 /**
  * HeaderTop component that displays social media links in the header.

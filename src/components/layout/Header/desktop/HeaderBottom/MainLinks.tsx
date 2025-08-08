@@ -7,7 +7,7 @@
  * @returns Unordered list of links, or `null` when the array is empty.
  */
 import Link from "next/link";
-import type { PrimaryLink } from "./HeaderBottom.types";
+import type { PrimaryLink } from "./header-bottom.types";
 
 /** Centre-aligned list of primary navigation links. */
 export default function MainLinks({ links }: { links: PrimaryLink[] }) {

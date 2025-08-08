@@ -7,7 +7,7 @@
  */
 import Link from "next/link";
 import clsx from "clsx";
-import type { LanguageOption } from "./HeaderBottom.types";
+import type { LanguageOption } from "./header-bottom.types";
 
 /** Right-hand language switcher. */
 export default function LanguageSwitcher({

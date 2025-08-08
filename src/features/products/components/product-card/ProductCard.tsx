@@ -1,133 +1,76 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Heart } from "lucide-react";
 import type { ProductCardProps } from "./ProductCard.types";
+import { calcDiscount } from "@/features/products/utils";
+import StatusBadge from "./StatusBadge";
+import FavoriteToggleButton from "./FavoriteToggleButton";
+import PriceDisplay from "./PriceDisplay";
+import { Button } from "@/components/ui";
 
 export default function ProductCard({
   id,
   name,
   image,
-  price = 22,
+  price = 7,
   currency = "USD",
-  href = `/products/${id}`,
-  description = "Hello world!",
-  oldPrice = 44,
+  description = "",
+  oldPrice = 6,
   isSoldOut = false,
-  isFavorite = true,
-  hasVariants = true,
+  hasVariants = false,
 }: ProductCardProps) {
-  const discount =
-    oldPrice && oldPrice > price
-      ? Math.round(((oldPrice - price) / oldPrice) * 100)
-      : null;
+  const discount = calcDiscount(oldPrice, price);
 
-  const btnLabel = isSoldOut
-    ? "SOLD OUT"
-    : hasVariants
-    ? "OPTIONS"
-    : "ADD TO CART";
-
-  const btnBg = isSoldOut
-    ? "bg-gray-200"
-    : hasVariants
-    ? "bg-gray-300"
-    : "bg-secondary";
-
-  const btnClasses = `w-full h-10 mt-4 px-4 py-2 rounded-sm text-white text-sm font-bold transition-colors cursor-pointer ${btnBg} ${
-    !isSoldOut && !hasVariants
-      ? "hover:bg-secondary/90 active:after:bg-secondary"
-      : ""
-  }`;
+  const btnLabel = isSoldOut ? "SOLD OUT" : hasVariants ? "OPTIONS" : "ADD TO CART";
+  const btnBg = isSoldOut ? "bg-gray-200 hover:bg-gray-200" : hasVariants ? "bg-gray-300" : "bg-secondary";
+  const btnHover = !isSoldOut && !hasVariants ? "hover:bg-secondary/90 active:after:bg-secondary" : "";
 
   return (
     <article
       itemScope
       itemType="http://schema.org/Product"
-      className="border w-56 rounded p-4 flex flex-col gap-2 mt-8 ml-8"
+      className="border w-56 rounded p-4 flex flex-col gap-2"
+      // no pointer on the whole card
     >
-      {/* media + favourite */}
       <div className="relative">
-        <Link href={href} itemProp="url" aria-label={name}>
-          <figure className="relative aspect-square w-full overflow-hidden my-6">
-            <Image
-              src={image}
-              alt={name}
-              width={240}
-              height={240}
-              className="object-contain w-full h-auto"
-              itemProp="image"
-              priority
-            />
-            <figcaption className="sr-only">{name}</figcaption>
-          </figure>
-        </Link>
-
-        {/* badge: discount or sold-out */}
-        {isSoldOut ? (
-          <span className="absolute top-0 left-0 text-red-600 text-xs font-semibold underline">
-            SOLD&nbsp;OUT
-          </span>
-        ) : discount ? (
-          <span className="absolute top-0 left-0 bg-red-600 text-white text-xs px-1.5 py-0.5 rounded">
-            -{discount}%
-          </span>
-        ) : null}
-
-        {/* favourite */}
-        <button
-          type="button"
-          aria-label="Toggle favourite"
-          className="absolute top-0 right-0 rounded-full p-1 bg-white/80 backdrop-blur hover:bg-white transition-colors cursor-pointer"
-        >
-          <Heart
-            className={`h-5 w-5 ${
-              isFavorite ? "text-secondary fill-secondary" : "text-gray-500"
-            }`}
-            aria-hidden="true"
+        {/* not clickable image */}
+        <figure className="relative aspect-square w-full overflow-hidden my-6">
+          <Image
+            src={image}
+            alt={name}
+            width={240}
+            height={240}
+            className="object-contain w-full h-auto"
+            itemProp="image"
+            priority
           />
-        </button>
+          <figcaption className="sr-only">{name}</figcaption>
+        </figure>
+
+        {/* top-left badge (sold-out or discount) */}
+        <StatusBadge discount={discount} isSoldOut={isSoldOut} className="absolute top-0 left-0" />
+
+        {/* favourite toggle (pointer + subtle hover only here) */}
+        <FavoriteToggleButton
+          productId={id}
+          className="absolute top-0 right-0 rounded-full p-1 bg-white/80 backdrop-blur hover:bg-white transition-colors cursor-pointer hover:text-secondary"
+        />
       </div>
 
-      {/* title */}
-      <h3 itemProp="name" className="text-xs text-muted-foreground">
-        {name}
-      </h3>
+      <h3 itemProp="name" className="text-xs text-muted-foreground">{name}</h3>
 
-      {/* description */}
       {description && (
-        <p itemProp="description" className="text-sm text-gray-800">
-          {description}
-        </p>
+        <p itemProp="description" className="text-sm text-gray-800">{description}</p>
       )}
 
-      {/* pricing + CTA */}
-      <div
-        itemProp="offers"
-        itemScope
-        itemType="http://schema.org/Offer"
-        className="mt-auto flex flex-col"
-      >
-        <div className="flex items-center gap-2">
-          <data
-            value={price}
-            itemProp="price"
-            className="text-secondary font-semibold text-xs"
-          >
-            {price.toFixed(2)} {currency}
-          </data>
-
-          {oldPrice && oldPrice > price && (
-            <span className="text-gray-400 line-through text-[10px]">
-              {oldPrice.toFixed(2)} {currency}
-            </span>
-          )}
-
-          <meta itemProp="priceCurrency" content={currency} />
-        </div>
-
-        <button type="button" aria-label={btnLabel} className={btnClasses}>
+      <div itemProp="offers" itemScope itemType="http://schema.org/Offer" className="mt-auto flex flex-col">
+        <PriceDisplay price={price} oldPrice={oldPrice} currency={currency} />
+        <Button
+          type="button"
+          aria-label={btnLabel}
+          disabled={isSoldOut}
+          className={`w-full h-10 mt-2 px-4 py-2 rounded-sm text-white text-sm font-bold transition-colors cursor-pointer disabled:cursor-not-allowed ${btnBg} ${btnHover}`}
+        >
           {btnLabel}
-        </button>
+        </Button>
       </div>
     </article>
   );
