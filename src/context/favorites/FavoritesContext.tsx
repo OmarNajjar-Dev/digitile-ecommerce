@@ -24,7 +24,6 @@ export function FavoritesProvider({
     initialIds,
     favoritesInitialState
   );
-  console.log(state);
 
   const isFavorite = useCallback(
     (id: string) => state.ids.has(id),
