@@ -10,7 +10,7 @@ export default function StatusBadge({ discount, isSoldOut, className }: StatusBa
   }
   if (discount) {
     return (
-      <span className={`bg-red-600 text-white text-xs px-1.5 py-0.5 rounded ${className || ""}`}>
+      <span className={`bg-red-600 text-white tracking-widest text-xs px-1.5 py-0.5 rounded ${className || ""}`}>
         -{discount}%
       </span>
     );
